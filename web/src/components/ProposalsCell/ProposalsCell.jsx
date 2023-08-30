@@ -6,6 +6,8 @@ import CardActions from '@mui/material/CardActions'
 import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
 
+import { Link, routes, useMatch } from '@redwoodjs/router'
+
 export const QUERY = gql`
   query ProposalsQuery {
     proposals: projects {
@@ -25,6 +27,16 @@ export const Failure = ({ error }) => (
   <div style={{ color: 'red' }}>Error: {error?.message}</div>
 )
 
+const ProjectDetailsLink = ({ to, ...rest }) => {
+  const matchInfo = useMatch(to)
+
+  return (
+    <Button size="small" as={Link} to={to} isActive={matchInfo.match}>
+      ProjectDetails
+    </Button>
+  )
+}
+
 export const Success = ({ proposals }) => {
   return (
     <>
@@ -36,9 +48,9 @@ export const Success = ({ proposals }) => {
             </Typography>
           </CardContent>
           <CardActions>
-            <Button size="small">Learn More</Button>
+            <ProjectDetailsLink to={routes.proposal()} />
           </CardActions>
-          <br></br>
+          <Divider />
         </Card>
       ))}
     </>

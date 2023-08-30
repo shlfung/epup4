@@ -15,10 +15,10 @@ import SubmitterLayout from 'src/layouts/SubmitterLayout'
 const Routes = () => {
   return (
     <Router>
-      <Route path="/proposal" page={ProposalPage} name="proposal" />
       <Set wrap={SubmitterLayout}>
         <Route path="/my-projects" page={MyProjectsPage} name="myProjects" />
         <Route path="/" page={HomePage} name="home" />
+        <Route path="/proposal" page={ProposalPage} name="proposal" />
       </Set>
       <Set wrap={ScaffoldLayout} title="Projects" titleTo="projects" buttonLabel="New Project" buttonTo="newProject">
         <Route path="/projects/new" page={ProjectNewProjectPage} name="newProject" />
