@@ -1,7 +1,10 @@
 export const QUERY = gql`
   query ProposalsQuery {
-    projects {
+    proposals: projects {
       id
+      title
+      reb_num
+      description
     }
   }
 `
@@ -14,10 +17,10 @@ export const Failure = ({ error }) => (
   <div style={{ color: 'red' }}>Error: {error?.message}</div>
 )
 
-export const Success = ({ projects }) => {
+export const Success = ({ proposals }) => {
   return (
     <ul>
-      {projects.map((item) => {
+      {proposals.map((item) => {
         return <li key={item.id}>{JSON.stringify(item)}</li>
       })}
     </ul>
