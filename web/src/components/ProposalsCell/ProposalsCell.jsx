@@ -32,7 +32,7 @@ const ProjectDetailsLink = ({ to, ...rest }) => {
 
   return (
     <Button size="small" as={Link} to={to} isActive={matchInfo.match}>
-      ProjectDetails
+      Project Details
     </Button>
   )
 }
