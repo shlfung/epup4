@@ -22,12 +22,16 @@ const SubmitterLayout = ({ children }) => {
     <>
       <header>
         <nav>
-          <ul>
-            <li>
-              <Link to={routes.home()}>Home</Link>
+          <ul id="navbar-ul">
+            <li id="navbar-li">
+              <Link id="navbar-link" to={routes.home()}>
+                Home
+              </Link>
             </li>
-            <li>
-              <Link to={routes.myProjects()}>My Projects</Link>
+            <li id="navbar-li">
+              <Link id="navbar-link" to={routes.myProjects()}>
+                My Projects
+              </Link>
             </li>
           </ul>
         </nav>
