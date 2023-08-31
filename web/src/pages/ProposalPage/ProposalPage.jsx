@@ -1,19 +1,15 @@
 import { Link, routes } from '@redwoodjs/router'
 import { MetaTags } from '@redwoodjs/web'
 
-const ProposalPage = () => {
+import ProposalCell from 'src/components/ProposalCell'
+
+const ProposalPage = ({id}) => {
   return (
     <>
       <MetaTags title="Proposal" description="Proposal page" />
 
-      <h1>ProposalPage</h1>
-      <p>
-        Find me in <code>./web/src/pages/ProposalPage/ProposalPage.jsx</code>
-      </p>
-      <p>
-        My default route is named <code>proposal</code>, link to me with `
-        <Link to={routes.proposal()}>Proposal</Link>`
-      </p>
+      <ProposalCell id={id} />
+
     </>
   )
 }

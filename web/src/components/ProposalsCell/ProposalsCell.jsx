@@ -48,7 +48,7 @@ export const Success = ({ proposals }) => {
             </Typography>
           </CardContent>
           <CardActions>
-            <ProjectDetailsLink to={routes.proposal()} />
+            <ProjectDetailsLink to={routes.proposal({id: proposal.id})} />
           </CardActions>
           <Divider />
         </Card>

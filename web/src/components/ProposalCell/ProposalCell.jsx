@@ -1,7 +1,10 @@
 export const QUERY = gql`
   query FindProposalQuery($id: Int!) {
-    proposal: proposal(id: $id) {
+    proposal: project(id: $id) {
       id
+      title
+      reb_num
+      description
     }
   }
 `
