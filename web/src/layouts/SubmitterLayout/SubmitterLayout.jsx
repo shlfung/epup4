@@ -37,7 +37,7 @@ const SubmitterLayout = ({ children }) => {
         </nav>
       </header>
 
-      <main>{children}</main>
+      <main className='submitter-main'>{children}</main>
     </>
   )
 }

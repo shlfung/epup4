@@ -7,6 +7,7 @@ export const QUERY = gql`
       title
       reb_num
       description
+      createdAt
     }
   }
 `

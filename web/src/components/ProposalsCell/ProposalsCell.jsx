@@ -29,7 +29,7 @@ export const Failure = ({ error }) => (
   <div style={{ color: 'red' }}>Error: {error?.message}</div>
 )
 
-/* const ProjectDetailsLink = ({ to, ...rest }) => {
+const ProjectDetailsLink = ({ to, ...rest }) => {
   const matchInfo = useMatch(to)
 
   return (
@@ -37,13 +37,13 @@ export const Failure = ({ error }) => (
       Project Details
     </Button>
   )
-} */
+}
 
 export const Success = ({ proposals }) => {
   return (
     <>
       {proposals.map((proposal) => (
-       /*  <Card key={proposal.id} sx={{ minWidth: 275 }} variant="outlined">
+       <Card key={proposal.id} sx={{ minWidth: 275 }} variant="outlined">
           <CardContent>
             <Typography sx={{ fontSize: 22 }} color="text.primary" gutterBottom>
               {proposal.title}
@@ -53,8 +53,7 @@ export const Success = ({ proposals }) => {
             <ProjectDetailsLink to={routes.proposal({id: proposal.id})} />
           </CardActions>
           <Divider />
-        </Card> */
-        <Proposal key={proposal.id} proposal={proposal} />
+        </Card>
       ))}
     </>
   )

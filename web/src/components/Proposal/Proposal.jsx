@@ -23,17 +23,21 @@ const Proposal = ({ proposal }) => {
   return (
     <proposal>
 
-<Card key={proposal.id} sx={{ minWidth: 275 }} variant="outlined">
-          <CardContent>
+
             <Typography sx={{ fontSize: 22 }} color="text.primary" gutterBottom>
-              {proposal.title}
+             Project Title: {proposal.title}
             </Typography>
-          </CardContent>
-          <CardActions>
-            <ProjectDetailsLink to={routes.proposal({id: proposal.id})} />
-          </CardActions>
-          <Divider />
-        </Card>
+            <br></br>
+            <Typography sx={{ fontSize: 12 }} color="text.primary" gutterBottom>
+             REB Number: {proposal.reb_num}
+            </Typography>
+            <Typography sx={{ fontSize: 12 }} color="text.primary" gutterBottom>
+             Description: {proposal.description}
+            </Typography>
+            <Typography sx={{ fontSize: 12 }} color="text.primary" gutterBottom>
+             Created At: {proposal.createdAt}
+            </Typography>
+
 
     </proposal>
 
