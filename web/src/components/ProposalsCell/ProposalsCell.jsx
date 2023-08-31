@@ -29,7 +29,7 @@ export const Failure = ({ error }) => (
   <div style={{ color: 'red' }}>Error: {error?.message}</div>
 )
 
-const ProjectDetailsLink = ({ to, ...rest }) => {
+/* const ProjectDetailsLink = ({ to, ...rest }) => {
   const matchInfo = useMatch(to)
 
   return (
@@ -37,7 +37,7 @@ const ProjectDetailsLink = ({ to, ...rest }) => {
       Project Details
     </Button>
   )
-}
+} */
 
 export const Success = ({ proposals }) => {
   return (
