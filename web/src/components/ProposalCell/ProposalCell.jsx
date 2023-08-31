@@ -1,3 +1,5 @@
+import Proposal from "src/components/Proposal"
+
 export const QUERY = gql`
   query FindProposalQuery($id: Int!) {
     proposal: project(id: $id) {
@@ -18,5 +20,5 @@ export const Failure = ({ error }) => (
 )
 
 export const Success = ({ proposal }) => {
-  return <div>{JSON.stringify(proposal)}</div>
+  return <Proposal proposal={proposal} />
 }

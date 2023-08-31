@@ -6,28 +6,7 @@ import CardActions from '@mui/material/CardActions'
 import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
 
-import { Link, routes, useMatch } from '@redwoodjs/router'
-
-import Proposal from 'src/components/Proposal'
-
-export const QUERY = gql`
-  query ProposalsQuery {
-    proposals: projects {
-      id
-      title
-      reb_num
-      description
-    }
-  }
-`
-
-export const Loading = () => <div>Loading...</div>
-
-export const Empty = () => <div>Empty</div>
-
-export const Failure = ({ error }) => (
-  <div style={{ color: 'red' }}>Error: {error?.message}</div>
-)
+import {Link, routes, useMatch} from '@redwoodjs/router'
 
 const ProjectDetailsLink = ({ to, ...rest }) => {
   const matchInfo = useMatch(to)
@@ -39,11 +18,12 @@ const ProjectDetailsLink = ({ to, ...rest }) => {
   )
 }
 
-export const Success = ({ proposals }) => {
+
+const Proposal = ({ proposal }) => {
   return (
-    <>
-      {proposals.map((proposal) => (
-       /*  <Card key={proposal.id} sx={{ minWidth: 275 }} variant="outlined">
+    <proposal>
+
+<Card key={proposal.id} sx={{ minWidth: 275 }} variant="outlined">
           <CardContent>
             <Typography sx={{ fontSize: 22 }} color="text.primary" gutterBottom>
               {proposal.title}
@@ -53,9 +33,11 @@ export const Success = ({ proposals }) => {
             <ProjectDetailsLink to={routes.proposal({id: proposal.id})} />
           </CardActions>
           <Divider />
-        </Card> */
-        <Proposal key={proposal.id} proposal={proposal} />
-      ))}
-    </>
+        </Card>
+
+    </proposal>
+
   )
 }
+
+export default Proposal
